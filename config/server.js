@@ -21,14 +21,15 @@ app.set('views', './app/views');
 app.use(express.static('./app/public'));
 
 /* configurar o middleware body-parser */
-app.use(bodyParser.urlencoded({extended: true}));
+app.use(bodyParser.urlencoded({ extended: true }));
 
 /* configurar o middleware express-validator */
-app.use(expressValidator());
+//app.use(expressValidator());
 
 /* efetua o autoload das rotas, dos models e dos controllers para o objeto app */
 consign()
 	.include('app/routes')
+	.then('config/database.js')
 	.then('app/models')
 	.then('app/controllers')
 	.into(app);
