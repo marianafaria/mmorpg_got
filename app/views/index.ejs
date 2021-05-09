@@ -16,6 +16,14 @@
 	<!-- incluindo css -->
 	<link href="css/style.css" rel="stylesheet">
 
+	<script>
+		$(document).ready(function () {
+			$('#btn_cadastro').click(function () {
+				window.location.href = '/cadastro';
+			});
+		});
+	</script>
+
 </head>
 
 <body class="body-index">
@@ -42,7 +50,7 @@
 							<input type="password" name="senha" id="senha" placeholder="Senha"
 								value="<%=dadosForm.senha%>" class="form-control" />
 							<button type="submit" class="btn btn-success">Entrar</button>
-							<button type="button" class="btn btn-info">Cadastro</button>
+							<button type="button" class="btn btn-info" id="btn_cadastro">Cadastro</button>
 						</div>
 					</form>
 		</div>
